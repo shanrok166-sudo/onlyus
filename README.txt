@@ -83,3 +83,11 @@ V22 FIXES
 - Removed a duplicated loadIce() function (screen share / TURN) and a duplicate push-setup call at sign-in.
 - Cloud Functions runtime bumped to Node 22 (functions/package.json). Redeploy functions: firebase deploy --only functions
 - Removed unused dev files from this package (script*.js, snippet.txt, check.js, glass.css): index.html already contains everything.
+
+V23 SKY GLASS REDESIGN
+- New look: a sky with slowly drifting clouds (stars at night in dark mode) behind frosted-glass headers, chat list, bubbles, composer, cards and tab bars. Light, Dark and System themes all work. The accent colour picker in Settings still tints buttons, bubbles and highlights (default purple).
+- Cause of the old broken look: four separate CSS layers (purple dark, blue glass, etc.) were fighting each other, and several used !important. They were removed and replaced by one layer. App logic and Firebase code were not touched.
+- Chat bubbles and list rows no longer use per-item blur, so scrolling is lighter on phones.
+- Calls and the whiteboard keep a dark glass look so video stays readable.
+- Welcome strip and Bubu/Dudu card stay hidden, as before.
+- Not tested in a real browser here. Send a screenshot of anything that looks wrong.
